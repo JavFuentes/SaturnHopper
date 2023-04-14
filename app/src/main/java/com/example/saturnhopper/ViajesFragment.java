@@ -4,28 +4,25 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import androidx.navigation.Navigation;
+import java.util.ArrayList;
+import java.util.List;
 
-// Define la clase ViajesFragment que hereda de la clase Fragment
+
 public class ViajesFragment extends Fragment {
-    // Constructor vacío requerido
-    public ViajesFragment() {
 
-    }
-
-    // Método que crea la vista del fragmento
+    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Infla el archivo de diseño fragment_pantalla_uno.xml
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_viajes, container, false);
     }
 
-    // Método llamado cuando se crea la vista del fragmento
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -41,5 +38,26 @@ public class ViajesFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_viajesFragment_to_homeFragment);
             }
         });
+
+        // Encuentra el RecyclerView y el botón desde el layout
+        RecyclerView rvViajes = view.findViewById(R.id.rv_viajes);
+        Button btnHome = view.findViewById(R.id.btnHome);
+
+        // Establece un LayoutManager (por ejemplo, LinearLayoutManager) para el RecyclerView
+        rvViajes.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Crea una lista de objetos de tipo PaqueteViaje y añade 4 paquetes de viaje a la lista
+        List<PaqueteViaje> listaPaquetesViaje = new ArrayList<>();
+        listaPaquetesViaje.add(new PaqueteViaje("Encélado", R.drawable.image1));
+        listaPaquetesViaje.add(new PaqueteViaje("Mimas", R.drawable.image2));
+        listaPaquetesViaje.add(new PaqueteViaje("Tetis", R.drawable.image3));
+        listaPaquetesViaje.add(new PaqueteViaje("Titán", R.drawable.image4));
+
+
+        // Crea un adaptador personalizado para el RecyclerView, pasándole la lista de paquetes de viaje
+        AdaptadorPaqueteViaje adaptadorPaqueteViaje = new AdaptadorPaqueteViaje(listaPaquetesViaje);
+
+        // Establece el adaptador personalizado en el RecyclerView
+        rvViajes.setAdapter(adaptadorPaqueteViaje);
     }
 }
