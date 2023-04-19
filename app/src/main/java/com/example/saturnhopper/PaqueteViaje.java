@@ -7,10 +7,10 @@ public class PaqueteViaje {
     private String destino;
     private String baseLunar;
     private int duracion;
-    private double precio;
+    private int precio;
     private int imagen;
 
-    public PaqueteViaje(int id, String destino, String baseLunar, int duracion, double precio, int imagen) {
+    public PaqueteViaje(int id, String destino, String baseLunar, int duracion, int precio, int imagen) {
         this.id = id;
         this.destino = destino;
         this.baseLunar = baseLunar;
@@ -51,11 +51,11 @@ public class PaqueteViaje {
         this.duracion = duracion;
     }
 
-    public double getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
 
