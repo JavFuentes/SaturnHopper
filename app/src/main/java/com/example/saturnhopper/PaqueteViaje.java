@@ -3,19 +3,25 @@ package com.example.saturnhopper;
 
 // Definición de la clase PaqueteViaje
 public class PaqueteViaje {
+    private int id;
     private String destino;
     private String baseLunar;
     private int duracion;
     private double precio;
     private int imagen;
 
-    public PaqueteViaje(String destino, String baseLunar, int duracion, double precio, int imagen) {
+    public PaqueteViaje(int id, String destino, String baseLunar, int duracion, double precio, int imagen) {
+        this.id = id;
         this.destino = destino;
         this.baseLunar = baseLunar;
         this.duracion = duracion;
         this.precio = precio;
         this.imagen = imagen;
     }
+
+    public int getId() {return id;}
+
+    public void setId(){this.id = id;}
 
     public String getDestino() {
         return destino;
