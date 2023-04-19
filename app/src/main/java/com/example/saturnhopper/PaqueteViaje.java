@@ -3,34 +3,68 @@ package com.example.saturnhopper;
 
 // Definición de la clase PaqueteViaje
 public class PaqueteViaje {
-    // Atributos de la clase: nombre del paquete y una imagen representativa
-    private String name;
-    private int picture;
+    private String destino;
+    private String baseLunar;
+    private int duracion;
+    private double precio;
+    private int imagen;
 
-    // Constructor de la clase que recibe el nombre y la imagen como argumentos
-    public PaqueteViaje(String name, int picture) {
-        // Asigna los argumentos a los atributos de la clase
-        this.name = name;
-        this.picture = picture;
+    public PaqueteViaje(String destino, String baseLunar, int duracion, double precio, int imagen) {
+        this.destino = destino;
+        this.baseLunar = baseLunar;
+        this.duracion = duracion;
+        this.precio = precio;
+        this.imagen = imagen;
     }
 
-    // Método para obtener el valor del atributo name
-    public String getName() {
-        return name;
+    public String getDestino() {
+        return destino;
     }
 
-    // Método para asignar un nuevo valor al atributo name
-    public void setName(String name) {
-        this.name = name;
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
 
-    // Método para obtener el valor del atributo picture
-    public int getPicture() {
-        return picture;
+    public String getBaseLunar() {
+        return baseLunar;
     }
 
-    // Método para asignar un nuevo valor al atributo picture
-    public void setPicture(int picture) {
-        this.picture = picture;
+    public void setBaseLunar(String baseLunar) {
+        this.baseLunar = baseLunar;
+    }
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public int getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(int imagen) {
+        this.imagen = imagen;
+    }
+
+    @Override
+    public String toString() {
+        return "PaqueteViaje{" +
+                "destino='" + destino + '\'' +
+                ", baseLunar='" + baseLunar + '\'' +
+                ", duracion=" + duracion +
+                ", precio=" + precio +
+                ", imagen='" + imagen + '\'' +
+                '}';
     }
 }

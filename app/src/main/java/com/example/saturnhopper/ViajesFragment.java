@@ -48,10 +48,10 @@ public class ViajesFragment extends Fragment {
 
         // Crea una lista de objetos de tipo PaqueteViaje y añade 4 paquetes de viaje a la lista
         List<PaqueteViaje> listaPaquetesViaje = new ArrayList<>();
-        listaPaquetesViaje.add(new PaqueteViaje("Encélado", R.drawable.image1));
-        listaPaquetesViaje.add(new PaqueteViaje("Mimas", R.drawable.image2));
-        listaPaquetesViaje.add(new PaqueteViaje("Tetis", R.drawable.image3));
-        listaPaquetesViaje.add(new PaqueteViaje("Titán", R.drawable.image4));
+        listaPaquetesViaje.add(new PaqueteViaje("Encélado","Cassini Facilities",2, 0.1, R.drawable.image1));
+        listaPaquetesViaje.add(new PaqueteViaje("Mimas","The Dome",3, 0.2, R.drawable.image2));
+        listaPaquetesViaje.add(new PaqueteViaje("Tetis","Big Igloo",3, 0.2, R.drawable.image3));
+        listaPaquetesViaje.add(new PaqueteViaje("Titán","Carinae",2, 0.1, R.drawable.image4));
 
 
         // Crea un adaptador personalizado para el RecyclerView, pasándole la lista de paquetes de viaje

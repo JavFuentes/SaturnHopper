@@ -24,13 +24,13 @@ public class AdaptadorPaqueteViaje extends RecyclerView.Adapter<AdaptadorPaquete
         return new ViewHolder(vista);
     }
 
-    // Método para enlazar los datos del equipo con el ViewHolder personalizado
+    // Método para enlazar los datos del paquete de viaje con el ViewHolder personalizado
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         PaqueteViaje viaje = listaViajes.get(position);
 
-        holder.tvNombre.setText(viaje.getName());
-        holder.ivImagen.setImageResource(viaje.getPicture());
+        holder.tvNombre.setText(viaje.getDestino());
+        holder.ivImagen.setImageResource(viaje.getImagen());
     }
 
     // Método para obtener la cantidad de elementos en la lista de equipos
