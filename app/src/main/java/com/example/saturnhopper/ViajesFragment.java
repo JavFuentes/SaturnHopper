@@ -7,10 +7,15 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.example.saturnhopper.db.DBPaquetesViaje;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +23,7 @@ public class ViajesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Infla el layout del fragmento
         return inflater.inflate(R.layout.fragment_viajes, container, false);
     }
 
@@ -41,21 +47,40 @@ public class ViajesFragment extends Fragment {
         RecyclerView rvViajes = view.findViewById(R.id.rv_viajes);
         Button btnHome = view.findViewById(R.id.btnHome);
 
+        // Crea una instancia de la clase DBPaquetesViaje para acceder a la base de datos
+        DBPaquetesViaje dbPaquetesViaje = new DBPaquetesViaje(getContext());
+
         // Establece un LayoutManager (por ejemplo, LinearLayoutManager) para el RecyclerView
         rvViajes.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Crea una lista de objetos de tipo PaqueteViaje y añade 4 paquetes de viaje a la lista
-        List<PaqueteViaje> listaPaquetesViaje = new ArrayList<>();
-        listaPaquetesViaje.add(new PaqueteViaje(1, "Encélado","Cassini Facilities",2, 0.1, R.drawable.image1));
-        listaPaquetesViaje.add(new PaqueteViaje(2, "Mimas","The Dome",3, 0.2, R.drawable.image2));
-        listaPaquetesViaje.add(new PaqueteViaje(3, "Tetis","Big Igloo",3, 0.2, R.drawable.image3));
-        listaPaquetesViaje.add(new PaqueteViaje(4, "Titán","Carinae",2, 0.1, R.drawable.image4));
+        // Obtiene la lista de paquetes de viaje de la base de datos
+        List<PaqueteViaje> listaPaquetesViaje = dbPaquetesViaje.mostrarPaquetesViaje();
+        Log.d("TAG", "Lista de paquetes de viaje: " + listaPaquetesViaje.toString());
 
+        // Iterar sobre la lista de paquetes y actualizar el atributo de imagen
+        for (PaqueteViaje paqueteViaje : listaPaquetesViaje) {
+            // Actualizar el atributo de imagen del paquete
+            switch (paqueteViaje.getImagen()) {
+                case 1:
+                    paqueteViaje.setImagen(R.drawable.image1);
+                    break;
+                case 2:
+                    paqueteViaje.setImagen(R.drawable.image2);
+                    break;
+                case 3:
+                    paqueteViaje.setImagen(R.drawable.image3);
+                    break;
+                case 4:
+                    paqueteViaje.setImagen(R.drawable.image4);
+                    break;
+                default:
+                    // No se encontró una imagen correspondiente, no se realiza ninguna acción
+                    break;
+            }
+        }
 
-        // Crea un adaptador personalizado para el RecyclerView, pasándole la lista de paquetes de viaje
+        // Crea un adaptador personalizado para el RecyclerView y lo establece en el RecyclerView
         AdaptadorPaqueteViaje adaptadorPaqueteViaje = new AdaptadorPaqueteViaje(listaPaquetesViaje);
-
-        // Establece el adaptador personalizado en el RecyclerView
         rvViajes.setAdapter(adaptadorPaqueteViaje);
     }
 }

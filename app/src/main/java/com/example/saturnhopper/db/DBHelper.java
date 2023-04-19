@@ -10,7 +10,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NOMBRE = "datos.db";
-    private static final String TABLE_PAQUETES_VIAJE = "paquetes_viaje";
+    public static final String TABLE_PAQUETES_VIAJE = "paquetes_viaje";
 
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);

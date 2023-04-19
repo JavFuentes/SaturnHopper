@@ -19,9 +19,13 @@ public class PaqueteViaje {
         this.imagen = imagen;
     }
 
+    public PaqueteViaje(){
+
+    }
+
     public int getId() {return id;}
 
-    public void setId(){this.id = id;}
+    public void setId(int id){this.id = id;}
 
     public String getDestino() {
         return destino;
