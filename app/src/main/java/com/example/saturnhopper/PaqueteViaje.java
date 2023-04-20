@@ -3,11 +3,22 @@ package com.example.saturnhopper;
 
 // Definición de la clase PaqueteViaje
 public class PaqueteViaje {
+    // Identificador único del paquete de viaje
     private int id;
+
+    // Nombre del destino del viaje
     private String destino;
+
+    // Nombre de la base lunar desde donde se hospedarán los turistas
     private String baseLunar;
+
+    // Duración de la estancia en la luna de destino (En años)
     private int duracion;
+
+    // Precio del paquete de viaje
     private double precio;
+
+    // ID de la imagen asociada al paquete de viaje
     private int imagen;
 
     public PaqueteViaje(int id, String destino, String baseLunar, int duracion, double precio, int imagen) {
@@ -23,6 +34,7 @@ public class PaqueteViaje {
 
     }
 
+    // Métodos getters y setters para acceder a los atributos de la clase
     public int getId() {return id;}
 
     public void setId(int id){this.id = id;}
@@ -67,6 +79,7 @@ public class PaqueteViaje {
         this.imagen = imagen;
     }
 
+    // Método para convertir el objeto a una cadena de texto
     @Override
     public String toString() {
         return "PaqueteViaje{" +

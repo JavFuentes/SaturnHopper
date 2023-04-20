@@ -12,10 +12,12 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NOMBRE = "datos.db";
     public static final String TABLE_PAQUETES_VIAJE = "paquetes_viaje";
 
+    // Constructor de la clase DBHelper
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
     }
 
+    // Método llamado cuando se crea la base de datos
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_PAQUETES_VIAJE + "(" +
@@ -27,6 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "imagen INTEGER)");
     }
 
+    // Método llamado cuando se actualiza la base de datos
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE " + TABLE_PAQUETES_VIAJE);
