@@ -23,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "destino TEXT NOT NULL," +
                 "base_lunar TEXT NOT NULL," +
                 "duracion INTEGER NOT NULL," +
-                "precio INTEGER NOT NULL," +
+                "precio DOUBLE NOT NULL," +
                 "imagen INTEGER)");
     }
 

@@ -44,7 +44,7 @@ public class AdaptadorPaqueteViaje extends RecyclerView.Adapter<AdaptadorPaquete
                 bundle.putString("destino", viaje.getDestino());
                 bundle.putString("baseLunar", viaje.getBaseLunar());
                 bundle.putInt("duracion", viaje.getDuracion());
-                bundle.putInt("precio", viaje.getPrecio());
+                bundle.putDouble("precio", viaje.getPrecio());
                 bundle.putInt("imagen", viaje.getImagen());
 
                 // Navegar al Fragment DetalleDestinoFragment y pasar los datos del paquete de viaje usando el Bundle

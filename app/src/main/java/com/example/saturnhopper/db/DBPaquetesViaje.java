@@ -36,7 +36,7 @@ public class DBPaquetesViaje extends DBHelper{
                 paqueteViaje.setDestino(cursorPaquetesViaje.getString(1));
                 paqueteViaje.setBaseLunar(cursorPaquetesViaje.getString(2));
                 paqueteViaje.setDuracion(cursorPaquetesViaje.getInt(3));
-                paqueteViaje.setPrecio(cursorPaquetesViaje.getInt(4));
+                paqueteViaje.setPrecio(cursorPaquetesViaje.getDouble(4));
                 paqueteViaje.setImagen(cursorPaquetesViaje.getInt(5));
 
                 listaPaqueteViajes.add(paqueteViaje);

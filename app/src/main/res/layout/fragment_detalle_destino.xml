@@ -17,47 +17,116 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@drawable/image1"
-            android:layout_marginBottom="50dp">
-        </ImageView>
+            android:layout_marginBottom="50dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/electromagnetic_lungs"
+                android:text="Destino:"
+                android:textColor="@color/color3"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/tv_destino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/electromagnetic_lungs"
+                android:text="Destino"
+                android:textColor="@color/color3"
+                android:textSize="30dp" />
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
 
         <TextView
-            android:id="@+id/tv_destino"
-            android:textSize="40dp"
-            android:fontFamily="@font/electromagnetic_lungs"
-            android:textColor="@color/color3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destino"
-            android:layout_marginBottom="20dp">
-        </TextView>
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/electromagnetic_lungs"
+            android:text="Base Lunar:"
+            android:textColor="@color/color3"
+            android:textSize="30dp" />
+
         <TextView
             android:id="@+id/tv_base_lunar"
-            android:textSize="40dp"
-            android:fontFamily="@font/electromagnetic_lungs"
-            android:textColor="@color/color3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/electromagnetic_lungs"
             android:text="Base Lunar"
-            android:layout_marginBottom="20dp">
-        </TextView>
+            android:textColor="@color/color3"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/electromagnetic_lungs"
+            android:text="Duración:"
+            android:textColor="@color/color3"
+            android:textSize="30dp" />
+
         <TextView
             android:id="@+id/tv_duracion"
-            android:textSize="40dp"
-            android:fontFamily="@font/electromagnetic_lungs"
-            android:textColor="@color/color3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/electromagnetic_lungs"
             android:text="Duración"
-            android:layout_marginBottom="20dp">
-        </TextView>
+            android:textColor="@color/color3"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/electromagnetic_lungs"
+            android:text="Precio:"
+            android:textColor="@color/color3"
+            android:textSize="30dp" />
+
         <TextView
             android:id="@+id/tv_precio"
-            android:textSize="40dp"
-            android:fontFamily="@font/electromagnetic_lungs"
-            android:textColor="@color/color3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Precio">
-        </TextView>
+            android:fontFamily="@font/electromagnetic_lungs"
+            android:text="Precio"
+            android:textColor="@color/color3"
+            android:textSize="30dp" />
+
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>
