@@ -1,5 +1,6 @@
 package com.example.saturnhopper.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,6 +17,28 @@ public class DBPaquetesViaje extends DBHelper{
     public DBPaquetesViaje(@Nullable Context context) {
         super(context);
         this.context = context;
+    }
+
+    public long insertarPaqueteViaje(String destino, String base_lunar, int duracion, double precio, int imagen){
+        long id = 0;
+
+        try {
+            DBHelper dbHelper = new DBHelper(context);
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            ContentValues values = new ContentValues();
+            values.put("destino", destino);
+            values.put("base_lunar", base_lunar);
+            values.put("duracion", duracion);
+            values.put("precio", precio);
+            values.put("imagen", imagen);
+
+            id = db.insert(TABLE_PAQUETES_VIAJE, null, values);
+
+        } catch(Exception ex){
+            ex.toString();
+        }
+        return id;
     }
 
     public ArrayList<PaqueteViaje> mostrarPaquetesViaje(){
