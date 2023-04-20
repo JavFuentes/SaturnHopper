@@ -47,7 +47,7 @@ public class DetalleDestinoFragment extends Fragment {
 
         TextView tvPrecio = view.findViewById(R.id.tv_precio);
         // establecer el precio en el TextView correspondiente
-        tvPrecio.setText(String.valueOf(precio));
+        tvPrecio.setText(String.valueOf(precio + " ETH"));
 
         ImageView ivImagen = view.findViewById(R.id.iv_imagen);
         // establecer la imagen en el ImageView correspondiente
