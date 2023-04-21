@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_image2"
     tools:context=".DetalleDestinoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:background="@color/color1"
         android:orientation="vertical">
 
         <ImageView
@@ -17,6 +17,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@drawable/image1"
+            android:background="@drawable/circular_button"
             android:layout_marginBottom="50dp"/>
 
 
