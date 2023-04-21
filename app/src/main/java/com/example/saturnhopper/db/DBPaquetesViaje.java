@@ -11,14 +11,17 @@ import com.example.saturnhopper.PaqueteViaje;
 
 import java.util.ArrayList;
 
+// Clase que extiende de DBHelper para interactuar con la tabla
 public class DBPaquetesViaje extends DBHelper {
     Context context;
 
+    // Constructor que recibe un contexto y llama al constructor de la superclase
     public DBPaquetesViaje(@Nullable Context context) {
         super(context);
         this.context = context;
     }
 
+    // Método para insertar un registro en la tabla "paquetes_viaje"
     public long insertarPaqueteViaje(String destino, String base_lunar, int duracion, double precio, int imagen) {
         long id = 0;
 
@@ -44,6 +47,7 @@ public class DBPaquetesViaje extends DBHelper {
         return id;
     }
 
+    // Método para obtener todos los registros de la tabla "paquetes_viaje" y devolverlos en un ArrayList
     public ArrayList<PaqueteViaje> mostrarPaquetesViaje() {
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
