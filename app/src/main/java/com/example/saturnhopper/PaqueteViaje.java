@@ -19,15 +19,19 @@ public class PaqueteViaje {
     private double precio;
 
     // ID de la imagen asociada al paquete de viaje
-    private int imagen;
+    private int imagenCardView;
 
-    public PaqueteViaje(int id, String destino, String baseLunar, int duracion, double precio, int imagen) {
+    //ID de la imagen asociada a la vista de detalle del paquete de viaje
+    private int imagenDetalle;
+
+    public PaqueteViaje(int id, String destino, String baseLunar, int duracion, double precio, int imagenCardView, int imagenDetalle) {
         this.id = id;
         this.destino = destino;
         this.baseLunar = baseLunar;
         this.duracion = duracion;
         this.precio = precio;
-        this.imagen = imagen;
+        this.imagenCardView = imagenCardView;
+        this.imagenDetalle = imagenDetalle;
     }
 
     public PaqueteViaje(){
@@ -71,23 +75,18 @@ public class PaqueteViaje {
         this.precio = precio;
     }
 
-    public int getImagen() {
-        return imagen;
+    public int getImagenCardView() { return imagenCardView; }
+
+    public void setImagenCardView(int imagen) {
+        this.imagenCardView= imagen;
     }
 
-    public void setImagen(int imagen) {
-        this.imagen = imagen;
+    public int getImagenDetalle() {
+        return imagenDetalle;
     }
 
-    // Método para convertir el objeto a una cadena de texto
-    @Override
-    public String toString() {
-        return "PaqueteViaje{" +
-                "destino='" + destino + '\'' +
-                ", baseLunar='" + baseLunar + '\'' +
-                ", duracion=" + duracion +
-                ", precio=" + precio +
-                ", imagen='" + imagen + '\'' +
-                '}';
+    public void setImagenDetalle(int imagen) {
+        this.imagenDetalle = imagen;
     }
+
 }

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 public class DetalleDestinoFragment extends Fragment {
     @Override
@@ -19,10 +21,21 @@ public class DetalleDestinoFragment extends Fragment {
         // inflar el diseño del fragmento de detalle del destino
         return inflater.inflate(R.layout.fragment_detalle_destino, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        // Encuentra los botones en la vista utilizando sus IDs
+        Button btnVolver = view.findViewById(R.id.btnVolver);
+
+        // Establece el comportamiento de clic para el botón btnVolver
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navega al fragmento ViajesFragment
+                Navigation.findNavController(v).navigate(R.id.action_detallesDestinoFragment_to_viajesFragment);
+            }
+        });
 
         // Recuperar los datos del paquete de viaje del Bundle
         int id = getArguments().getInt("id");
@@ -30,7 +43,8 @@ public class DetalleDestinoFragment extends Fragment {
         String baseLunar = getArguments().getString("baseLunar");
         int duracion = getArguments().getInt("duracion");
         double precio = getArguments().getDouble("precio");
-        int imagen = getArguments().getInt("imagen");
+        int imagenCardView = getArguments().getInt("imagenCardView");
+        int imagenDetalle = getArguments().getInt("imagenDetalle");
 
         // Mostrar los datos del paquete de viaje en la interfaz de usuario
         TextView tvDestino = view.findViewById(R.id.tv_destino);
@@ -51,6 +65,6 @@ public class DetalleDestinoFragment extends Fragment {
 
         ImageView ivImagen = view.findViewById(R.id.iv_imagen);
         // establecer la imagen en el ImageView correspondiente
-        ivImagen.setImageResource(imagen);
+        ivImagen.setImageResource(imagenDetalle);
     }
 }

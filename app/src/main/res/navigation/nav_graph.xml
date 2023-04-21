@@ -30,5 +30,9 @@
         android:id="@+id/detallesDestinoFragment"
         android:name="com.example.saturnhopper.DetalleDestinoFragment"
         android:label="fragment_detalles_destino"
-        tools:layout="@layout/fragment_detalle_destino" />
+        tools:layout="@layout/fragment_detalle_destino" >
+        <action
+            android:id="@+id/action_detallesDestinoFragment_to_viajesFragment"
+            app:destination="@id/viajesFragment" />
+    </fragment>
 </navigation>

@@ -33,7 +33,7 @@ public class AdaptadorPaqueteViaje extends RecyclerView.Adapter<AdaptadorPaquete
         PaqueteViaje viaje = listaViajes.get(position);
 
         holder.tvNombre.setText(viaje.getDestino());
-        holder.ivImagen.setImageResource(viaje.getImagen());
+        holder.ivImagen.setImageResource(viaje.getImagenCardView());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +45,8 @@ public class AdaptadorPaqueteViaje extends RecyclerView.Adapter<AdaptadorPaquete
                 bundle.putString("baseLunar", viaje.getBaseLunar());
                 bundle.putInt("duracion", viaje.getDuracion());
                 bundle.putDouble("precio", viaje.getPrecio());
-                bundle.putInt("imagen", viaje.getImagen());
+                bundle.putInt("imagen", viaje.getImagenCardView());
+                bundle.putInt("imagenDetalle", viaje.getImagenDetalle());
 
                 // Navegar al Fragment DetalleDestinoFragment y pasar los datos del paquete de viaje usando el Bundle
                 Navigation.findNavController(v).navigate(R.id.action_viajesFragment_to_detallesDestinoFragment, bundle);

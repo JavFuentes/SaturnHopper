@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
             // Insertamos los paquetes de viaje en la tabla correspondiente
             DBPaquetesViaje dbPaquetesViaje = new DBPaquetesViaje(MainActivity.this);
-            id = dbPaquetesViaje.insertarPaqueteViaje("Encélado","Cassini",2, 2.5,1);
-            id = dbPaquetesViaje.insertarPaqueteViaje("Mimas","The Dome",3, 3.2,2);
-            id = dbPaquetesViaje.insertarPaqueteViaje("Tetis","Big Igloo",2, 2.3,3);
-            id = dbPaquetesViaje.insertarPaqueteViaje("Titán","Big Carinae",4, 3.8,4);
+            id = dbPaquetesViaje.insertarPaqueteViaje("Encélado","Cassini",2, 2.5,1,5);
+            id = dbPaquetesViaje.insertarPaqueteViaje("Mimas","The Dome",3, 3.2,2,6);
+            id = dbPaquetesViaje.insertarPaqueteViaje("Tetis","Big Igloo",2, 2.3,3,7);
+            id = dbPaquetesViaje.insertarPaqueteViaje("Titán","Big Carinae",4, 3.8,4,8);
 
             // Verificamos si los registros se han creado correctamente
             if(id > 0){

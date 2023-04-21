@@ -22,7 +22,7 @@ public class DBPaquetesViaje extends DBHelper {
     }
 
     // Método para insertar un registro en la tabla "paquetes_viaje"
-    public long insertarPaqueteViaje(String destino, String base_lunar, int duracion, double precio, int imagen) {
+    public long insertarPaqueteViaje(String destino, String base_lunar, int duracion, double precio, int imagen_cardview, int imagen_detalle) {
         long id = 0;
 
         try {
@@ -36,7 +36,8 @@ public class DBPaquetesViaje extends DBHelper {
             values.put("base_lunar", base_lunar);
             values.put("duracion", duracion);
             values.put("precio", precio);
-            values.put("imagen", imagen);
+            values.put("imagen_cardview", imagen_cardview);
+            values.put("imagen_detalle", imagen_detalle);
 
             // Insertar los valores en la tabla
             id = db.insert(TABLE_PAQUETES_VIAJE, null, values);
@@ -69,7 +70,8 @@ public class DBPaquetesViaje extends DBHelper {
                 paqueteViaje.setBaseLunar(cursorPaquetesViaje.getString(2));
                 paqueteViaje.setDuracion(cursorPaquetesViaje.getInt(3));
                 paqueteViaje.setPrecio(cursorPaquetesViaje.getDouble(4));
-                paqueteViaje.setImagen(cursorPaquetesViaje.getInt(5));
+                paqueteViaje.setImagenCardView(cursorPaquetesViaje.getInt(5));
+                paqueteViaje.setImagenDetalle(cursorPaquetesViaje.getInt(6));
 
                 listaPaqueteViajes.add(paqueteViaje);
             } while (cursorPaquetesViaje.moveToNext());

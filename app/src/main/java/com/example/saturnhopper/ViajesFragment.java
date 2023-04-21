@@ -57,21 +57,43 @@ public class ViajesFragment extends Fragment {
         List<PaqueteViaje> listaPaquetesViaje = dbPaquetesViaje.mostrarPaquetesViaje();
         Log.d("TAG", "Lista de paquetes de viaje: " + listaPaquetesViaje.toString());
 
-        // Iterar sobre la lista de paquetes y actualizar el atributo de imagen
+        // Iterar sobre la lista de paquetes y actualizar el atributo de imagen_cardview
         for (PaqueteViaje paqueteViaje : listaPaquetesViaje) {
             // Actualizar el atributo de imagen del paquete
-            switch (paqueteViaje.getImagen()) {
+            switch (paqueteViaje.getImagenCardView()) {
                 case 1:
-                    paqueteViaje.setImagen(R.drawable.image1);
+                    paqueteViaje.setImagenCardView(R.drawable.encendalo_cardview_1);
                     break;
                 case 2:
-                    paqueteViaje.setImagen(R.drawable.image2);
+                    paqueteViaje.setImagenCardView(R.drawable.mimas_cardview_2);
                     break;
                 case 3:
-                    paqueteViaje.setImagen(R.drawable.image3);
+                    paqueteViaje.setImagenCardView(R.drawable.tetis_cardview_3);
                     break;
                 case 4:
-                    paqueteViaje.setImagen(R.drawable.image4);
+                    paqueteViaje.setImagenCardView(R.drawable.titan_cardview_4);
+                    break;
+                default:
+                    // No se encontró una imagen correspondiente, no se realiza ninguna acción
+                    break;
+            }
+        }
+
+        // Iterar sobre la lista de paquetes y actualizar el atributo de imagen_detalle
+        for (PaqueteViaje paqueteViaje : listaPaquetesViaje) {
+            // Actualizar el atributo de imagen del paquete
+            switch (paqueteViaje.getImagenDetalle()) {
+                case 5:
+                    paqueteViaje.setImagenDetalle(R.drawable.encelado_detalle_5);
+                    break;
+                case 6:
+                    paqueteViaje.setImagenDetalle(R.drawable.mimas_detalle_6);
+                    break;
+                case 7:
+                    paqueteViaje.setImagenDetalle(R.drawable.tetis_detalle_7);
+                    break;
+                case 8:
+                    paqueteViaje.setImagenDetalle(R.drawable.titan_detalle_8);
                     break;
                 default:
                     // No se encontró una imagen correspondiente, no se realiza ninguna acción

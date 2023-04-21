@@ -26,7 +26,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 "base_lunar TEXT NOT NULL," +
                 "duracion INTEGER NOT NULL," +
                 "precio DOUBLE NOT NULL," +
-                "imagen INTEGER)");
+                "imagen_cardview INTEGER, " +
+                "imagen_detalle INTEGER)");
     }
 
     // Método llamado cuando se actualiza la base de datos
